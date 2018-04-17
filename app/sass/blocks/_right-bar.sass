@@ -1,0 +1,192 @@
+.right-bar
+  padding: 25px
+  margin-bottom: 5px
+  &__block
+    margin-bottom: 20px
+  &__caption
+    text-transform: uppercase
+    font-size: rem(22)
+    color: $button-color
+    font-family: $main-font--bold
+    padding: 10px 0px
+    border-bottom: 1px solid rgba(63, 81, 181, 0.34)
+
+.right-bar-list
+  &__item
+    font-weight: 400
+    font-family: $font-text
+    color: $dark-color
+    font-size: rem(15)
+    padding: 15px 0px
+    position: relative
+    border-bottom: 1px solid #ebeae9
+    &--category
+       &::after
+         content: attr(data-count)
+         font-family: $font-text
+         font-weight: bold
+         position: absolute
+         right: 0px
+         color: $dark-color
+         top: 50%
+         transform: translateY(-50%)
+    &:last-child
+      border-bottom: none
+
+.search
+  width: 90%
+  position: relative
+  margin-bottom: 25px
+  +center()
+  &__input
+    color: $dark-color
+    box-sizing: border-box
+    width: 100%
+    background-color: $main-bg-color
+    position: relative
+    border-radius: 25px
+    padding: 15px
+  &__button
+    border-radius: 50%
+    position: absolute
+    right: 5px
+    top: 50%
+    transform: translateY(-50%)
+    height: 38px
+    width: 38px
+    background: $pink-color url('../img/icon/search-icon.svg') no-repeat
+    background-position: 50% 50%
+    background-size: 50%
+
+
+
+.subscribe-block
+  &__input
+    font-family: $font-text
+    font-weight: 400
+    box-sizing: border-box
+    width: 100%
+    padding: 15px
+    display: block
+    border-radius: 5px
+    background-color: transparent
+    border: 1px solid #e0e0e0
+    color: $dark-color
+  .right-bar-list__item
+    font-weight: 400
+    border-bottom: none
+  &__title
+    display: inline-block
+    margin-bottom: 10px
+  &__line
+    position: relative
+    margin-top: 25px
+    margin-bottom: 25px
+    width: 100%
+    height: 1px
+    background-color: $dark-color
+  &__line-text
+    background-color: $white-color
+    padding: 5px
+    display: inline-block
+    color: $dark-color
+    position: absolute
+    left: 50%
+    transform: translate(-50%,-50%)
+
+.social-list--sub
+  margin: 0
+  +flex($jc: sa)
+  .social-list__link
+    $icons-color: (facebook: #3b5999,twitter: #55acee,vk: #4c75a3,pinterest: #ff2e56,google-plus: #34465d, dribble: #ea4c89)
+    @each $icon,$color in $icons-color
+      &--#{$icon}
+        background-color: $color
+        border-radius: 50%
+        width: 38px
+        height: 38px
+        background-position: 50% 50%
+        background-repeat: no-repeat
+        background-size:  50%
+        opacity: 1
+        &:hover
+          opacity: 0.8
+
+.tab-post
+  margin-top: 20px
+  +flex()
+  &__recent,&__popular
+    width: 50%
+    box-sizing: border-box
+    padding: 18px 0px
+    font-size: rem(16)
+    border: 2px solid $button-color
+    color: $button-color
+    background-color: $white-color
+    &:hover
+       background-color: $button-color
+       color: $white-color
+
+  &__recent
+    border-bottom-left-radius: 5px
+    border-top-left-radius: 5px
+  &__popular
+    border-bottom-right-radius: 5px
+    border-top-right-radius: 5px
+  &--active
+    background-color: $button-color
+    color: $white-color
+
+.post-block
+  +flex($wrap: nowrap)
+  &__img
+      width: 100px
+      height: 80px
+      margin-right: 20px
+      background-size: cover
+      background-repeat: no-repeat
+      background-position: bottom left
+  &__content
+      position: relative
+      font-family: $font-text
+      color: $dark-color
+      flex-grow: 1
+  &__date
+      font-size: rem(12)
+  &__comments
+      position: absolute
+      top: 3px
+      right: 0px
+      &-icon
+        display: inline-block
+        width: 13px
+        height: 13px
+        background: url('../img/icon/chat-icon--blue.svg') no-repeat center center;
+        background-size: cover;
+      &::after
+        content: attr(data-comments)
+        font-size: rem(12)
+        color: #d3dadf
+  &__paragraph
+      margin-top: 15px
+      font-family: $font-text
+      font-weight: bold
+      font-size: rem(16)
+      line-height: rem(20)
+
+.tags-list
+  +flex()
+  margin-top: 20px
+.right-bar-list__item--tags
+  cursor: pointer
+  font-family: $font-text
+  letter-spacing: rem(1)
+  font-size: rem(17)
+  padding: 10px 25px
+  border-radius: 5px
+  background-color: #eee
+  margin-right: 10px
+  margin-bottom: 10px
+  transition: all .2s linear
+  &:hover
+    background-color: darken(#eee,7%)

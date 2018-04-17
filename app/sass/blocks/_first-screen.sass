@@ -1,0 +1,337 @@
+// ПОДКЛЮЧЕНИЕ МИКСИН И ПЕРЕМЕННЫх
+// @import 'mixin'
+// @import 'vars'
+
+// ПОДКЛЮЧЕНИЕ СПРАЙТА SVG
+// @import '../img/sprite/sprite-svg
+
+
+// TOP LINE
+.top-line-wrap
+	width: 100%
+	background-color: $topline-color
+
+
+
+.top-line
+	padding: 12px 0px
+	+flex($jc: sb)
+	
+
+
+.social-list
+	vertical-align: middle
+	&__item
+		margin-right: 10px
+		display: inline-block
+		vertical-align: middle
+	&__link
+		opacity: 0.7
+		display: inline-block
+		vertical-align: middle
+		width: 16px
+		height: 16px
+		background-size: cover
+		transition: all .3s
+		@each $icon in $icons
+	 	&--#{$icon}
+	 		background-image: url('../img/icon/#{$icon}-icon.svg')
+	 	&:hover
+	 		opacity: 1
+
+
+.account-settings
+	+flex($ai: c)
+	&__login
+		display: inline-block
+		vertical-align: middle
+		padding: 0px 15px
+		font-family: $main-font
+		font-size: rem(13)
+		font-weight: 600
+		text-transform: uppercase
+		color: $grey-color
+		border-right: 2px solid darken($grey-color, 15%)
+	&__title
+		display: inline-block
+		vertical-align: middle
+
+
+
+.account-icon
+	display: inline-block
+	vertical-align: middle
+	background: url('../img/icon/profile-icon.svg') no-repeat center center;
+	background-size: cover
+	width: 20px
+	height: 20px
+	opacity: 0.7
+	transition: all .3s
+	margin-right: 5px
+	&:hover
+		opacity: 1
+
+
+// СТИЛИЗАЦИЯ СЕЛЕКТ
+.select-language
+	background-color: transparent
+	width: 50px
+	height: 18px
+	margin-left: 15px
+
+.select
+	font-weight: 600
+	font-size: rem(15)
+	position: relative
+	&__title
+		color: $grey-color
+		text-transform: uppercase
+	&__icon
+		border-bottom: 2px solid $grey-color
+		border-right: 2px solid $grey-color
+	&Option
+		width: 100%
+		text-transform: uppercase
+		text-align: center
+
+
+.selectToggle
+	transform: translateY(5px)
+
+.selectOption__item
+	padding: 5px
+	font-size: 0.9rem
+	cursor: pointer
+	font-weight: 400
+
+// HEADER
+
+.header
+	+flex($jc: sb, $ai: c)
+	width: 100%
+	position: absolute
+	left: 0px
+	z-index: 10
+	top: 0px
+	height: 80px
+	&--is-top
+		z-index: 1000
+
+.header__menu-button
+	z-index: 1000
+
+.button-burger
+	display: none
+	width: 80px
+	height: 80px
+	margin-left: 15px
+	cursor: pointer
+
+
+.button-burger path
+  stroke-width: 15px;
+  stroke-linecap: round;
+  stroke: #fff;
+  fill: none;
+  transition: all .5s ease-in-out;
+
+
+.button-burger__top_bar,
+.button-burger__bottom_bar
+  stroke-dasharray: 240px 910px;
+
+
+.button-burger__middle_bar
+  stroke-dasharray: 240px 240px;
+
+
+
+
+.button-burger--is-opened .button-burger__top_bar,
+.button-burger--is-opened .button-burger__bottom_bar
+  stroke-dashoffset: -650px;
+
+
+.button-burger--is-opened .button-burger__middle_bar
+  stroke-dasharray: 0px 220px;
+  stroke-dashoffset: -120px;
+
+
+
+
+
+
+
+
+.logo
+	display: block
+	font-size: rem(35)
+	text-transform: uppercase
+	font-family: $main-font
+	font-weight: 700
+	color: $white-color
+	letter-spacing: 1.5px
+
+
+.nav-bar
+	display: block
+	
+.menu-list
+	+flex($jc:sb, $ai:c)
+	&__item
+		font-family: $main-font
+		font-weight: bold
+		text-transform: uppercase
+		font-size: rem(16)
+		color: $white-color
+		border-bottom: 4px solid transparent
+		transition: all .3s
+		&:hover
+			border-bottom: 4px solid $pink-color
+  &__link
+		display: block
+		padding: 25px 15px
+
+		
+.menu-list--header
+	display: flex
+	
+	
+.capabilities
+	width: 100%
+	max-width: 170px
+	&__item
+		width: 45px
+		border-right: 1px solid $grey-color
+		display: inline-block
+		height: 33px
+		opacity: 1
+		transition: all .3s
+		$items: (search, heart, shopping-cart)
+		@each $item in $items
+			&--#{$item}
+				background: url('../img/icon/#{$item}-icon.svg') no-repeat center center
+				background-size: 45%
+		&:last-child
+			border-right: 0px
+
+		&:hover
+			opacity: 0.7
+
+
+
+
+
+//slider
+.banner
+	background: #fff url('../img/header-bg.jpg') no-repeat center center
+	background-size: cover
+	position: relative
+	&::before 
+		content: ''
+		position: absolute
+		width: 100%
+		height: 100%
+		z-index: 1
+		background-color: rgba(33, 32, 32, 0.74)
+	&__content
+		position: relative
+		text-align: center
+		color: $white-color
+		z-index: 5
+	&__subtitle
+		font-family: $main-font
+		font-weight: 400
+		font-size: rem(28)
+		text-transform: uppercase
+		padding-top: 290px
+		color: $grey-color
+		margin-bottom: 30px
+	&__title
+		text-transform: uppercase
+		font-size: rem(60)
+		font-family: $main-font--bold
+		font-weight: bold
+		line-height: rem(60)
+		letter-spacing: rem(1)
+		margin-bottom: 40px
+	&__button
+		margin-bottom: 80px
+.banner-data
+	text-align: center
+	&__author-picture
+		margin: 0px auto
+		width: 50px
+		height: 50px
+		border-radius: 50%
+		background: url('../img/profile_avatar/author_banner.jpg')
+		background-size: contain
+		margin-bottom: 20px
+	&__author
+		display: block
+		font-size: rem(16)
+		font-weight: bold
+		margin-bottom: 15px
+	&__date
+		color: $grey-color
+		font-size: rem(14)
+		letter-spacing: 1px
+		margin-bottom: 35px
+		display: block
+
+.rep
+	+flex($jc: c)
+	letter-spacing: 0px
+	padding-bottom: 65px
+	&--news-feed
+		position: absolute
+		right: 20px
+		bottom: 20px
+		padding: 0px
+	&--small
+		bottom: 10px
+		right: 10px
+
+.rep-comments
+	cursor: pointer
+	padding-right: 15px
+	position: relative
+	color: $grey-color
+	vertical-align: middle
+	&--small-size
+		margin-right: 0px
+	&__icon
+		vertical-align: middle
+		width: 20px
+		height: 20px
+		margin-right: 10px
+		display: inline-block
+		background: url('../img/icon/chat-icon.svg')
+		background-size: cover
+	&__text
+		display: inline-block
+		vertical-align: middle
+	&::after
+		content: attr(data-comm)
+		display: inline-block
+		vertical-align: middle
+		
+
+.rep-likes
+	cursor: pointer
+	padding-right: 15px
+	position: relative
+	color: $grey-color
+	vertical-align: middle
+	&__icon
+		vertical-align: middle
+		width: 20px
+		height: 20px
+		margin-right: 10px
+		display: inline-block
+		background-size: cover
+		background: url('../img/icon/heart-icon.svg')
+	&::after
+		content: attr(data-likes)
+		display: inline-block
+		vertical-align: middle

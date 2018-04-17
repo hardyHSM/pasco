@@ -1,0 +1,72 @@
+// Подключение шрифтов
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700')
+@import url("http://allfont.ru/allfont.css?fonts=montserrat-black")
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700')
+@import url("http://allfont.ru/allfont.css?fonts=playfair-display-black")
+
+// подключение переменных и миксин
+@import 'mixin'
+@import 'vars'
+// подключение библиотек
+@import '../libs/select'
+
+
+
+@import 'blocks/button'
+@import 'blocks/first-screen'
+@import 'blocks/main-content'
+@import 'blocks/right-bar'
+@import 'blocks/collage'
+@import 'blocks/footer'
+@import 'blocks/settings-drop-down'
+
+html
+	font-size: 16px
+
+body
+	margin: 0
+	padding: 0
+	font-family: $main-font
+	font-weight: 400
+
+
+.container 
+	max-width: 1170px
+	width: 100%
+	position: relative
+	margin-left: auto
+	margin-right: auto
+
+ul
+	list-style-type: none
+	margin: 0px
+	padding: 0px
+
+a
+	color: inherit
+	text-decoration: none
+
+button
+  cursor: pointer
+
+h1,h2,h3,h4,h5,h6
+	margin: 0
+	padding: 0
+
+
+
+input,button, textarea
+  border: none
+  outline: none
+
+input:-moz-placeholder
+    opacity: 0.6
+input::-webkit-input-placeholder
+   opacity: 0.6
+
+
+textarea:-moz-placeholder
+    opacity: 0.6
+textarea::-webkit-input-placeholder
+
+@import 'media'

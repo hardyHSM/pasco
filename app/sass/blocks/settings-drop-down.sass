@@ -1,0 +1,26 @@
+.drop-down-settings
+	background: #fff
+	border-radius: 5px
+	position: absolute
+	z-index: 150
+	min-width: 120px
+	visibility: hidden
+	opacity: 0
+	transform: translateY(50px)
+	left: 96%
+	top: 51px
+	transition: all .25s
+	z-index: 1000
+	box-shadow: 3px 4px 5px 1px rgba(0, 0, 0, 0.31)
+	&__item
+		user-select: none
+		cursor: pointer
+		font-size: 0.8rem
+		padding: 10px
+		border-bottom: 1px solid #eee
+		&:last-child
+			border-bottom: 0px
+	&--is-active
+		visibility: visible
+		opacity: 1
+		transform: translateY(0px)
